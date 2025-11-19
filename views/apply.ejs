@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GatePass Registration</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/formcss.css">
+
+    <style>
+        /* CARD STYLE LIKE LOGIN PAGE */
+        .form-card {
+            background: #ffffff;
+            width: 70%;
+            max-width: 900px;
+            padding: 40px;
+            border-radius: 15px;
+            margin: auto;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            backdrop-filter: blur(5px);
+        }
+
+        /* Flex layout for rows */
+        .form-row {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+
+        /* Input fields same size */
+        .form-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-label {
+            font-weight: 700;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        .form-input,
+        .form-select,
+        .form-date {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #d0d7de;
+            font-size: 16px;
+        }
+
+        /* Validation text */
+        .error-msg {
+            color: red;
+            font-size: 13px;
+            display: none;
+        }
+
+        .submit-btn {
+            background: #0074e4;
+            padding: 12px 20px;
+            font-size: 18px;
+            color: #fff;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            width: 200px;
+            margin: auto;
+            display: block;
+            font-weight: 600;
+        }
+
+        .submit-btn:hover {
+            background: #0056b3;
+        }
+
+        /* RESPONSIVE FOR MOBILE */
+        @media (max-width: 700px) {
+            .form-row {
+                flex-direction: column;
+            }
+            .form-card {
+                width: 90%;
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="full-home-page">
+
+            <!-- SIDEBAR (unchanged) -->
+            <div class="sidebar">
+                <input type="checkbox" id="check" />
+                <div class="btn_one">
+                    <label for="check"><i class="fa-solid fa-bars"></i></label>
+                </div>
+
+                <div class="sidebar_menu">
+                    <div class="logo"><a href="#">GatePass</a></div>
+                    <div class="btn_two"><label for="check"><i class="fa-solid fa-xmark"></i></label></div>
+
+                    <div class="menu">
+                        <div class="hover">
+                            <i class="fa-solid fa-house"></i>
+                            <a class="res" href="/studenthome">Home</a>
+                        </div>
+                        <div class="hover">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <a class="res" href="/">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FORM AREA -->
+            <div class="sidebar-side">
+                <div class="form-card">
+                    <h1 class="text-center" style="text-align:center; font-weight:800; margin-bottom:25px;">GatePass Registration</h1>
+
+                    <form id="gateForm" action="/deshboard" method="POST">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">First Name</label>
+                                <input class="form-input" name="fName" required>
+                                <p class="error-msg">First name is required</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Middle Name</label>
+                                <input class="form-input" name="mName">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Last Name</label>
+                                <input class="form-input" name="lName" required>
+                                <p class="error-msg">Last name is required</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Mode of Pass</label>
+                                <select class="form-select" name="mode" required>
+                                    <option value="">Select mode of pass</option>
+                                    <option value="Day">Day Pass</option>
+                                    <option value="Night">Night Pass</option>
+                                </select>
+                                <p class="error-msg">Please select mode of pass</p>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Purpose of Visit</label>
+                                <input class="form-input" name="pOV" required>
+                                <p class="error-msg">Purpose is required</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Time Out</label>
+                                <input class="form-date" type="datetime-local" name="time" required>
+                                <p class="error-msg">Select time</p>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SIMPLE VALIDATION SCRIPT -->
+    <script>
+        document.getElementById("gateForm").addEventListener("submit", function(e) {
+            let valid = true;
+
+            document.querySelectorAll(".form-group").forEach(group => {
+                let input = group.querySelector("input, select");
+                let errorMsg = group.querySelector(".error-msg");
+
+                if (input && errorMsg) {
+                    if (!input.value.trim()) {
+                        errorMsg.style.display = "block";
+                        valid = false;
+                    } else {
+                        errorMsg.style.display = "none";
+                    }
+                }
+            });
+
+            if (!valid) e.preventDefault();
+        });
+    </script>
+
+</body>
+</html>

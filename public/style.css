@@ -1,0 +1,447 @@
+html, body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .Full-Login-page {
+    background-color: #fff; 
+    background-image: url('https://img.freepik.com/free-vector/hand-drawn-colorful-science-education-background_23-2148489182.jpg?w=1060&t=st=1699103785~exp=1699104385~hmac=97e894373a02ff6f17651ad508da9922bb4ef77a6efbc20abc85ec74d00dccff');
+    background-repeat: repeat;
+    height: 100vh;
+  
+  }
+  
+  .page-details {
+    display: flex;
+    justify-content: center;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    font-size: 45px;
+    height: 180px;
+    line-height: 106%;
+    }
+    .page-details-para-text{
+      padding: 40px;
+    }
+  .Allstaffloginpage {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    box-sizing: border-box;
+    padding: 20px;
+    margin-top: 100px !important;
+    width: 100%;
+    margin: 0px auto;
+    /* z-index: 1; */
+    position: relative;
+  }
+  .Student-login {
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    border-top: 10px solid rgb(153, 0, 239);
+    height: 250px;
+    padding: 40px;
+    width: 250px;
+    outline: rgb(201, 217, 231) solid 1px;
+  }
+  .admin-login {
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    border-top: 10px solid rgb(7, 6, 8);
+    height: 250px;
+    padding: 40px;
+    width: 250px;
+    outline: rgb(201, 217, 231) solid 1px;
+  }
+  .guard-login {
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    border-top: 10px solid rgb(6, 147, 227);
+    height: 250px;
+    padding: 40px;
+    width: 250px;
+    outline: rgb(201, 217, 231) solid 1px;
+  }
+  .Student-login:hover,
+  .admin-login:hover,
+  .guard-login:hover {
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 6px 16px 0px;
+    transform: translateY(-2px);
+    transition: transform 200ms ease-out 0s, box-shadow 200ms ease-out 0s;
+  }
+  .title {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+  }
+  .btn {
+    margin-top: 40px;
+    background-color: #0074e4;
+    color: #fff;
+    width: 95px;
+    padding: 10px 20px;
+    border-radius: 9px;
+    text-align: center;
+  }
+  .btn-center {
+    display: flex;
+    justify-content: center;
+  }
+  .btn:hover {
+    box-shadow: rgb(0, 0, 0, 0.8) 0px 2px 5px 0px;
+    background-color: #2973b8;
+  }
+  .bttn {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18.5px;
+    font-weight: 600;
+  }
+  
+  /* RESPONSIVE */
+  @media screen and (max-width: 881px) and (min-width: 596px) {
+    .Allstaffloginpage {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+  
+    .Student-login,
+    .admin-login,
+    .guard-login {
+      width: 500px !important;
+      margin-bottom: 20px;
+      transition: 0.4s;
+    }
+  }
+  @media screen and (max-width: 596px) {
+    .Allstaffloginpage {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+  
+    .Student-login,
+    .admin-login,
+    .guard-login {
+      width: auto;
+      margin-bottom: 20px;
+      transition: 0.4s;
+    }
+  }
+  @media screen and (max-width: 1081px) {
+    .Student-login,
+    .admin-login,
+    .guard-login {
+      width: 200px;
+    }
+  
+  }
+  
+  @media screen and (max-width: 924px) {
+    .Student-login,
+    .admin-login,
+    .guard-login {
+      width: 180px;
+    }
+  }
+  
+  
+  
+  
+  /* Sign Up page */
+  .Full-sign-page {
+    width: 100%;
+    height: 100%;
+    background-image: url('https://devfolio.co/blog/content/images/size/w2000/2021/04/image--4-.png');
+     background-size: cover;
+   
+  }
+  .sign-up-page{
+    width: 400px;
+    height: 60%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 16px;
+    padding: 20px 40px;
+    border:black solid 3px;
+    
+  }
+  .sign-up-page:hover{
+    border: rgb(66, 153, 225) solid 3px;
+  }
+  .sign-page-support{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  }
+  .sign-up-page-text{
+    font-size: 44px;
+    font-weight: 900;
+    font-family: "Nunito Sans", sans-serif;
+  }
+  .email-id-div{
+    display: flex;
+    font-size: 28px;
+    font-weight: 400;
+    font-family: "Nunito Sans", sans-serif;
+    margin-top: 44px;
+  }
+  #email{
+    width: 60%;
+    height: 30px;
+    margin-left: 34px;
+    border-radius: 4px;
+    border-color: rgb(129, 162, 239);
+    outline: rgb(129, 162, 239);
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Nunito Sans", sans-serif;
+  }
+  #email:hover,
+  #password:hover{
+    box-shadow:black 0px 0px 5px 1px;
+  
+  }
+  #password{
+    width: 60%;
+    height: 30px;
+    margin-left: 14px;
+    border-radius: 4px;
+    border-color: rgb(129, 162, 239);
+    outline: rgb(129, 162, 239);
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Nunito Sans", sans-serif;
+  }
+  .password-id-div{
+    display: flex;
+    font-size: 28px;
+    font-weight: 400;
+    font-family: "Nunito Sans", sans-serif;
+    margin-top: 50px;
+  }
+  .signinpage-button-div{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+  }
+  .signinpage-button{
+    width: 160px;
+    height: 45px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "Nunito Sans", sans-serif;
+    border-radius: 5px;
+     background-color: #0074e4;
+  }
+  .signinpage-button:hover{
+    box-shadow: rgb(0, 0, 0, 0.8) 0px 2px 5px 0px;
+    background-color: #2973b8;
+  }
+  
+  /* DeshBord */
+  *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  .main_box{
+    background: url("images/graduating-time-covid-19-background.jpg");
+    height: 100vh;
+    background-size: cover;
+  }
+  .btn_one i{
+    color: black;
+    font-size: 30px;
+    font-weight: 700;
+    position: absolute;
+    left: 16px;
+    line-height: 60px;
+    cursor: pointer;
+    transition: all 0.3s linear;
+  }
+  .sidebar_menu{
+    position: fixed;
+    left: -300px;
+    height: 100vh;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+    transition: all 0.3s linear;
+  }
+  .sidebar_menu .logo{
+    position: absolute;
+    width: 100%;
+    line-height: 60px;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+    height: 60px;
+  }
+  .sidebar_menu .logo a{
+    position: absolute;
+    left: 50px;
+    color: black;
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: 500;
+  }
+  .sidebar_menu .btn_two i{
+    color: grey;
+    font-size: 30px;
+    line-height: 60px;
+    position: absolute;
+    left: 275px;
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.3s linear;
+  }
+  .sidebar_menu .menu{
+    position: absolute;
+    width: 100%;
+    top: 80px;
+  }
+  .sidebar_menu .menu li{
+    margin-top: 6px;
+    padding: 14px 20px;
+  }
+  .sidebar_menu .menu i,a{
+    color: black;
+    text-decoration: none;
+    font-size: 27px;
+    margin-top: 15px;
+    font-weight: 600;
+  }
+
+  .sidebar_menu .menu i{
+    padding-right: 8px;
+  }
+  .sidebar_menu .social_media{
+    position: absolute;
+    left: 25%;
+    bottom: 50px;
+  }
+  .sidebar_menu .social_media i{
+    color: black;
+    opacity: 0.5;
+    padding: 0 5px;
+  }
+  #check{
+    display: none;
+  }
+  .sidebar_menu .menu li:hover{
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+  }
+  .btn_one i:hover{
+    font-size: 40px;
+  }
+  .btn_two i:hover{
+    font-size: 30px;
+  }
+  .sidebar_menu .social_media i:hover{
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  #check:checked ~ .sidebar_menu{
+    left: 0;
+  }
+  #check:checked ~.btn_one i{
+    opacity: 0;
+  }
+  #check:checked ~.sidebar_menu .btn_two i{
+    opacity: 1;
+  }
+  .hover{
+    transition: background-color 0.3s ease;
+  }
+  .hover:hover{
+    border: 2px solid black;
+    cursor: pointer;
+  
+  }
+  .full-home-page{
+    display: flex;
+  }
+  .home-page{
+    height: 100%;
+  }
+  .full-home-page{
+    display: flex !important;
+    flex-direction: row; 
+  }
+  /* UNIVERSAL LOGIN CARD DESIGN */
+.login-card {
+    width: 400px;
+    background: white;
+    padding: 30px 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+    text-align: center;
+    border: 2px solid black;
+}
+
+.login-title {
+    font-size: 38px;
+    font-weight: 900;
+    margin-bottom: 25px;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.login-field {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: 1px solid #a5b4fc;
+    font-size: 17px;
+    font-family: "Nunito Sans", sans-serif;
+}
+.login-field:hover {
+    box-shadow: 0px 0px 5px 1px black;
+}
+
+.login-label {
+    text-align: left;
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: 600;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.login-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.login-btn {
+    background: #0074e4;
+    color: white;
+    width: 180px;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+.login-btn:hover {
+    background: #2973b8;
+}
+.login-btn a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Ensure login card is centered */
+.full-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}

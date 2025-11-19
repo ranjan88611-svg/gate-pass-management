@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SideBar</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="/Users/mohdsahil/My Projects/SideBar_Using_HTML&CSS/style.css"
+    />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="desboard.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins&family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <div class="full-home-page">
+        <div class="sidebar">
+          <input type="checkbox" name="checkbox" id="check" />
+          <div class="btn_one">
+            <label for="check">
+              <i class="fa-solid fa-bars"></i>
+            </label>
+          </div>
+          <div class="sidebar_menu">
+            <div class="logo">
+              <a href="#">GatePass</a>
+            </div>
+            <div class="btn_two">
+              <label for="check">
+                <i class="fa-solid fa-xmark"></i>
+              </label>
+            </div>
+            <div class="menu">
+              <div class="hover">
+                <i class="fa-solid fa-house"><a href="#"></a></i>
+                <div style="display: flex" id="responsive">
+                  <a class="res" href="http://localhost:8080/studenthome">Home</a>
+                </div>
+              </div>
+              <div class="hover">
+                <i class="fa-solid fa-right-from-bracket"><a href="#"></a></i>
+                <div style="display: flex" id="responsive">
+                  <a class="res" href="http://localhost:8080/">Log Out</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="full-conatiner">
+     <% for(let studata of studat){ %>
+      
+          <div class="information-deshboard">
+            <div class="id-date">
+              <div class="id">
+                  <p> <%=studata._id%></p>
+               </div>
+                <div class="date">
+                  <p><%= new Date(studata.time).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' }) %>
+                  </p>
+                </div>
+            </div>
+            <div>
+              <div class="all-information">
+                <div class="name">
+                  <p>Name:</p>
+                   <p><%=studata.fName%> <%=studata.mName%> <%=studata.lName%></p>
+                </div>
+                 <div class="hname">
+                  <p>Gate Pass:</p>
+                    <p><%=studata.hName%></p>
+                 </div>
+                 <div class="room">
+                    <p>Room No.:</p>
+                    <p><%=studata.rNO%></p>
+                 </div>
+                 <div class="mode">
+                   <p>Pass Mode:</p>
+                   <p> <%=studata.mode%></p>
+                 </div>
+                 <div class="pov"> 
+                   <p>Visited </p>
+                   <p><%=studata.pOV%></p>
+                 </div>
+              </div>
+            </div>
+              <div class="psssed-or-not">
+                <div class="psssed-or-not-text">
+                  <p class="Student-status"><%= studata.Status %></p>  
+                </div>
+              </div>
+        
+            
+          </div>
+        
+     <% } %> 
+    
+    </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

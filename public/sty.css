@@ -1,0 +1,282 @@
+html, body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .main{
+  
+    height: 100%;
+    width: 100%;
+    list-style: none;
+  }
+  .sidebar{
+    height: 100%;
+    width: 22%;
+  }
+  .sidebar-side{
+    height: 100%;
+    width: 78%;
+  }
+  .sidebar-side::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://img.freepik.com/free-photo/background-people-with-suitcases_1203-1589.jpg?w=1800&t=st=1699192339~exp=1699192939~hmac=a35c4098484255a887411e780f00871bbb300f0d8166bd1e599eb240a2c015c1');
+    background-size: cover;
+    filter: blur(2px); 
+    z-index: -1; 
+  }
+  
+  .image-home{
+    display: flex;
+    justify-content: center;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    font-size: 45px;
+    height: 180px;
+    line-height: 106%;
+    padding: 20px 70px;
+    margin-top: 130px;
+  }
+  .full-home-page{
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .main_box{
+    background: url("images/graduating-time-covid-19-background.jpg");
+    height: 100vh;
+    background-size: cover;
+  }
+  .btn_one i{
+    color: black;
+    font-size: 30px;
+    font-weight: 700;
+    position: absolute;
+    left: 16px;
+    line-height: 60px;
+    cursor: pointer;
+    transition: all 0.3s linear;
+  }
+  .sidebar_menu{
+    position: fixed;
+    left: -300px;
+    height: 100vh;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+    transition: all 0.3s linear;
+    border: solid rgb(239, 230, 230) 0.8px;
+  }
+  .sidebar_menu .logo{
+    position: absolute;
+    width: 100%;
+    line-height: 60px;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+    height: 60px;
+  }
+  .sidebar_menu .logo a{
+    position: absolute;
+    left: 50px;
+    color: black;
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: 500;
+  }
+  .sidebar_menu .btn_two i{
+    color: grey;
+    font-size: 30px;
+    line-height: 60px;
+    position: absolute;
+    left: 275px;
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.3s linear;
+  }
+  .sidebar_menu .menu{
+    position: absolute;
+    width: 100%;
+    top: 80px;
+  }
+  .sidebar_menu .menu li{
+    margin-top: 6px;
+    padding: 14px 20px;
+  }
+  .sidebar_menu .menu i,a{
+    color: black;
+    text-decoration: none;
+    font-size: 23px;
+    margin-top: 15px;
+  }
+  .sidebar_menu .menu i{
+    padding-right: 8px;
+  }
+  .sidebar_menu .social_media{
+    position: absolute;
+    left: 25%;
+    bottom: 50px;
+  }
+  .sidebar_menu .social_media i{
+    color: black;
+    opacity: 0.5;
+    padding: 0 5px;
+  }
+  #check{
+    display: none;
+  }
+  .sidebar_menu .menu li:hover{
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  }
+  .sidebar_menu .menu .hover:hover {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+  .btn_one i:hover{
+    font-size: 40px;
+  }
+  .btn_two i:hover{
+    font-size: 30px;
+  }
+  .sidebar_menu .social_media i:hover{
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  .apply-gatepass{
+    color: black;
+    text-decoration: none;
+    font-size: 23px;
+    margin-top: 15px;
+    background-color: transparent;
+    border: transparent;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  #check:checked ~ .sidebar_menu{
+    left: 0;
+  }
+  #check:checked ~.btn_one i{
+    opacity: 0;
+  }
+  #check:checked ~.sidebar_menu .btn_two i{
+    opacity: 1;
+  }
+  .responsive{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    font-size: 45px;
+  }
+  .hover{
+    transition: background-color 0.3s ease;
+    margin-top: 30px;
+    display: flex;
+  }
+  .hover:hover{
+    cursor: pointer;
+  
+  }
+  .full-home-page{
+    display: flex;
+  }
+  .home-page{
+    height: 100%;
+  }
+  .full-home-page{
+    display: flex !important;
+    flex-direction: row; 
+  }
+  @media (max-width: 1155px)  {
+    .sidebar_menu {
+      width: 200px;
+      font-family: "Nunito Sans", sans-serif;
+    font-weight: 400;
+    font-size: 35px;
+    transition: 0.6s;
+    }
+    .sidebar_menu .logo{
+      position: absolute;
+      right: 40px;
+    }
+    .sidebar_menu .btn_two i{
+      color: grey;
+      font-size: 30px;
+      line-height: 60px;
+      position: absolute;
+      left: 180px;
+      opacity: 0;
+      cursor: pointer;
+      transition: all 0.3s linear;
+    }
+    .sidebar_menu .logo a{
+      position: absolute;
+      left: 50px;
+      color: black;
+      text-decoration: none;
+      font-size: 28px;
+      font-weight: 500;
+    }
+  }
+  
+  @media (max-width: 763px) {
+    .res {
+      display: none;
+    }
+    .sidebar_menu {
+      width: 50px;
+      transition: 0.6s;
+    }
+    .sidebar_menu .menu i {
+       font-size: 34px;
+    }
+    .sidebar_menu .btn_two i{
+      color: grey;
+      font-size: 30px;
+      line-height: 60px;
+      position: absolute;
+      left: 16px;
+      opacity: 0;
+      cursor: pointer;
+      transition: all 0.3s linear;
+    }
+    .sidebar_menu .logo a{
+      text-decoration: transparent;
+    }
+    .apply-gatepass {
+      font-size: 0.2px;
+        }
+        .sidebar_menu .logo{
+          display: none;
+        }
+  }
+  
+  @media (max-width: 589px) {
+    .image-home{
+      display: flex;
+      justify-content: center;
+      font-family: "Nunito Sans", sans-serif;
+      font-weight: 500;
+      font-size: 25px;
+      height: 180px;
+      line-height: 106%;
+      padding: 20px 50px;
+      margin-top: 150px;
+  
+    }
+   .after-res{
+opacity: 0;
+  font-size: 1px; 
+ }
+ .apply-gatepass {
+font-size: 0.2px;
+  }
+  .sidebar_menu .logo{
+    display: none;
+  }
+}
+  
+   
