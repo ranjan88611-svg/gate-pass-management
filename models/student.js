@@ -50,7 +50,12 @@ const studentSchema = new mongoose.Schema({
     Status: {
         type: String,
         default: "pending"
-    }
+    },
+
+    sem: { type: String, required: true },
+    section: { type: String, required: true },
+
+
 });
 
 const studentData = mongoose.model("studentData", studentSchema);

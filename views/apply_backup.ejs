@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GatePass Registration</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/formcss.css">
+
+    <style>
+        /* ------------ CENTER WRAPPER ------------ */
+        .apply-wrapper {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* ------------ APPLY CARD ------------ */
+        .apply-card {
+            width: 65%;
+            max-width: 850px;
+            background: white;
+            padding: 35px 45px;
+            border-radius: 16px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.25);
+            font-family: "Nunito Sans", sans-serif;
+        }
+
+        .apply-card h2 {
+            text-align: center;
+            font-weight: 800;
+            margin-bottom: 25px;
+        }
+
+        /* ------------ ROW STYLING ------------ */
+        .row2 {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 18px;
+        }
+
+        .row2 div {
+            width: 100%;
+        }
+
+        label {
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 6px;
+            border-radius: 6px;
+            border: 1px solid #9DB7F0;
+            font-size: 15px;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            box-shadow: 0 0 4px #0074e4;
+        }
+
+        /* ------------ SUBMIT BUTTON ------------ */
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background: #0074e4;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .submit-btn:hover {
+            background: #005fcc;
+        }
+
+        /* ------------ RESPONSIVE ------------ */
+        @media (max-width: 768px) {
+            .row2 {
+                flex-direction: column;
+            }
+            .apply-card {
+                width: 90%;
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="full-home-page">  <!-- Keeps your background intact -->
+<div class="apply-wrapper">
+
+    <div class="apply-card">
+
+        <h2>GatePass Registration</h2>
+
+        <form action="/deshboard" method="POST">
+
+            <!-- NAME AUTOFILL -->
+            <div class="row2">
+                <div>
+                    <label>First Name</label>
+                    <input type="text" name="fName" value="<%= user.name.split(' ')[0] %>" readonly>
+                </div>
+                <div>
+                    <label>Middle Name</label>
+                    <input type="text" name="mName">
+                </div>
+            </div>
+
+            <div class="row2">
+                <div>
+                    <label>Last Name</label>
+                    <input type="text" name="lName" value="<%= user.name.split(' ')[1] || '' %>" readonly>
+                </div>
+
+                <div>
+                    <label>Mode of Pass</label>
+                    <select name="mode" required>
+                        <option value="">Select mode of pass</option>
+                        <option value="Day">Day</option>
+                        <option value="Night">Night</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row2">
+                <div>
+                    <label>Purpose of Visit</label>
+                    <input type="text" name="pOV" required>
+                </div>
+
+                <div>
+                    <label>Time Out</label>
+                    <input type="datetime-local" name="time" required>
+                </div>
+            </div>
+
+            <!-- HIDDEN AUTOFILL FIELDS -->
+            <input type="hidden" name="usn" value="<%= user.usn %>">
+            <input type="hidden" name="email" value="<%= user.email %>">
+            <input type="hidden" name="phone" value="<%= user.phone %>">
+
+            <button class="submit-btn" type="submit">Submit</button>
+
+        </form>
+
+    </div>
+
+</div>
+</div>
+
+</body>
+</html>

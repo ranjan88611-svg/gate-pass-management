@@ -445,3 +445,12 @@ html, body {
     align-items: center;
     height: 100%;
 }
+/* FIX: Apply Login/Admin background to Dashboard */
+.full-home-page,
+.main_box {
+    background-image: url('https://devfolio.co/blog/content/images/size/w2000/2021/04/image--4-.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
