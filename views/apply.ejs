@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <title>GatePass Registration</title>
-
   <!-- External CSS -->
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/formcss.css">
-
+  <link rel="stylesheet" href="/desboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Apply Form CSS -->
   <style>
     .apply-wrapper {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: none !important;
-}
-
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: none !important;
+    }
 
     .apply-card {
       width: 65%;
@@ -26,7 +28,7 @@
       background: white;
       padding: 35px 45px;
       border-radius: 16px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.25);
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
       font-family: "Nunito Sans", sans-serif;
     }
 
@@ -41,11 +43,18 @@
       gap: 20px;
       margin-bottom: 18px;
     }
-    .row2 div { width: 100%; }
 
-    label { font-weight: 600; font-size: 15px; }
+    .row2 div {
+      width: 100%;
+    }
 
-    input, select {
+    label {
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    input,
+    select {
       width: 100%;
       padding: 12px;
       margin-top: 6px;
@@ -67,133 +76,115 @@
       cursor: pointer;
       margin-top: 10px;
     }
+
     .submit-btn:hover {
       background: #005fcc;
     }
 
     @media (max-width: 768px) {
-      .row2 { flex-direction: column; }
-      .apply-card { width: 90%; padding: 25px; }
+      .row2 {
+        flex-direction: column;
+      }
+
+      .apply-card {
+        width: 90%;
+        padding: 25px;
+      }
     }
   </style>
-
 </head>
 
 <body>
-  <div class="full-home-page">
-    <div class="apply-wrapper">
-
-      <div class="apply-card">
-
-        <h2>GatePass Registration</h2>
-
-        <form action="/deshboard" method="POST">
-
-          <!-- Row 1 -->
-          <div class="row2">
-            <div>
-              <label>First Name</label>
-              <input type="text" name="fName" value="<%= user?.name?.split(' ')[0] || '' %>" readonly>
+  <div class="main">
+    <div class="full-home-page">
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+        <input type="checkbox" id="check" />
+        <div class="btn_one">
+          <label for="check"><i class="fa-solid fa-bars"></i></label>
+        </div>
+        <div class="sidebar_menu">
+          <div class="logo">
+            <a href="#">GatePass</a>
+          </div>
+          <div class="btn_two">
+            <label for="check"><i class="fa-solid fa-xmark"></i></label>
+          </div>
+          <div class="menu">
+            <div class="hover">
+              <i class="fa-solid fa-house"></i>
+              <a class="res" href="/dashboard">Dashboard</a>
             </div>
-
-            <div>
-              <label>Middle Name</label>
-              <input type="text" name="mName">
+            <div class="hover">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              <a class="res" href="/">Log Out</a>
             </div>
           </div>
-
-          <!-- Row 2 -->
-          <div class="row2">
-            <div>
-              <label>Last Name</label>
-              <input type="text" name="lName" value="<%= user?.name?.split(' ')[1] || '' %>" readonly>
-            </div>
-
-            <div>
-              <label>Mode of Pass</label>
-              <select name="mode" required>
-                <option value="">Select mode of pass</option>
-                <option value="Day">Day</option>
-                <option value="Night">Night</option>
-              </select>
-            </div>
-          </div>
-<div class="row2">
-    <div>
-        <label>Semester</label>
-        <select name="sem" required>
-            <option value="">Select Semester</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-        </select>
-    </div>
-
-    <div>
-        <label>Section</label>
-        <select name="section" required>
-            <option value="">Select Section</option>
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
-            <option value="D">D</option>
-        </select>
-    </div>
-</div>
-
-          <!-- Row 3 -->
-          <div class="row2">
-            <div>
-              <label>Purpose of Visit</label>
-              <input type="text" name="pOV" required>
-            </div>
-
-            <div>
-              <label>Time Out</label>
-              <input type="datetime-local" name="time" required>
-            </div>
-          </div>
-
-          <!-- Hidden Autofill -->
-          <input type="hidden" name="usn" value="<%= user?.usn || '' %>">
-          <input type="hidden" name="email" value="<%= user?.email || '' %>">
-          <input type="hidden" name="phone" value="<%= user?.phone || '' %>">
-
-          <button class="submit-btn" type="submit">Submit</button>
-        </form>
-<!-- SIMPLE VALIDATION SCRIPT -->
-<script>
-document.getElementById("gateForm")?.addEventListener("submit", function (e) {
-
-    let valid = true;
-
-    document.querySelectorAll(".form-group").forEach(group => {
-        let input = group.querySelector("input, select");
-
-        if (input && input.value.trim() === "") {
-            valid = false;
-            group.style.border = "1px solid red";
-        } else {
-            group.style.border = "none";
-        }
-    });
-
-    if (!valid) {
-        e.preventDefault();
-        alert("Please fill all required fields.");
-    }
-});
-</script>
-
+        </div>
       </div>
-
+      <!-- APPLY FORM WRAPPER -->
+      <div class="apply-wrapper">
+        <div class="apply-card">
+          <h2>GatePass Registration</h2>
+          <form action="/dashboard" method="POST">
+            <!-- Row 1 -->
+            <div class="row2">
+              <div>
+                <label>First Name</label>
+                <input type="text" name="fName" value="<%= user?.name?.split(' ')[0] || '' %>" readonly>
+              </div>
+              <div>
+                <label>Last Name</label>
+                <input type="text" name="lName" value="<%= user?.name?.split(' ')[1] || '' %>" readonly>
+              </div>
+            </div>
+            <div class="row2">
+              <div>
+                <label>Semester</label>
+                <select name="sem" required>
+                  <option value="">Select Semester</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                </select>
+              </div>
+              <div>
+                <label>Section</label>
+                <select name="section" required>
+                  <option value="">Select Section</option>
+                  <option value="A">A</option>
+                  <option value="B">B</option>
+                  <option value="C">C</option>
+                  <option value="D">D</option>
+                </select>
+              </div>
+            </div>
+            <!-- Row 3 -->
+            <div class="row2">
+              <div>
+                <label>Purpose of Visit</label>
+                <input type="text" name="pOV" required>
+              </div>
+              <div>
+                <label>Time Out</label>
+                <input type="datetime-local" name="time" required>
+              </div>
+            </div>
+            <!-- Hidden Autofill -->
+            <input type="hidden" name="usn" value="<%= user?.usn || '' %>">
+            <input type="hidden" name="email" value="<%= user?.email || '' %>">
+            <input type="hidden" name="phone" value="<%= user?.phone || '' %>">
+            <button class="submit-btn" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
-
 </body>
+
 </html>

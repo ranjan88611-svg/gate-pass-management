@@ -6,89 +6,47 @@
     <title>Student Login</title>
     <link rel="stylesheet" href="/style.css" />
     <style>
-      /* Only local adjustments to center content without changing global CSS */
+      .Full-Login-page,
       .Full-sign-page {
-        /* keep the background-image declared in style.css */
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
-
-        /* center the login card */
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh; /* full viewport height */
+        height: 100vh;
         width: 100%;
-      }
-
-      .login-container {
-        background: rgba(255,255,255,1); /* white card (no transparency) */
-        padding: 36px;
-        border-radius: 12px;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-        width: 360px;
-        text-align: center;
-      }
-
-      .login-container input {
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        border-radius: 6px;
-        border: 1px solid #d0d7de;
-      }
-
-      .login-container button {
-        width: 100%;
-        padding: 10px;
-        margin-top: 8px;
-        border-radius: 6px;
-        border: none;
-        background: #0074e4;
-        color: #fff;
-        font-weight: 600;
-        cursor: pointer;
-      }
-
-      .register-btn {
-        display: block;
-        margin-top: 14px;
-        color: #0074e4;
-        text-decoration: none;
-        font-weight: 700;
       }
     </style>
   </head>
 
   <body>
-    <!-- Use the sign-up background wrapper (existing in style.css) -->
-    <div class="Full-sign-page">
-    <div class="full-center">
+    <div class="Full-Login-page Full-sign-page">
+      <div class="full-center">
         <div class="login-card">
+          <p class="login-title">Student Login</p>
 
-            <p class="login-title">Student Login</p>
+          <form action="/studentsignin" method="POST">
+            <label class="login-label">USN</label>
+            <input class="login-field" name="usn" placeholder="Enter USN" required />
 
-            <form action="/studentsignin" method="POST">
-                <label class="login-label">USN</label>
-                <input class="login-field" name="usn" placeholder="Enter USN" required>
+            <label class="login-label">Password</label>
+            <input class="login-field" type="password" name="password" placeholder="Enter password" required />
 
-                <label class="login-label">Password</label>
-                <input class="login-field" type="password" name="password" placeholder="Enter password" required>
+            <div class="login-btn-container">
+              <button class="login-btn" type="submit">Login</button>
+            </div>
+          </form>
 
-                <div class="login-btn-container">
-                    <button class="login-btn" type="submit">Login</button>
-                </div>
-            </form>
-
-            <a href="/student/register" style="margin-top:15px; display:block; font-weight:700; color:#0074e4;">
-                New user? Register here
-            </a>
-
+          <a
+            href="/student/register"
+            style="margin-top: 15px; display: block; font-weight: 700; color: #0074e4"
+          >
+            New user? Register here
+          </a>
         </div>
+      </div>
     </div>
-</div>
-
-
   </body>
 </html>

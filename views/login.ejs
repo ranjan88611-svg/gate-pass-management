@@ -1,71 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gate Pass</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body>
-    <div class="Full-Login-page">
-      <div class="page-details">
-        <p class="page-details-para-text">
-          <span style="color: rgb(129, 162, 239)">Seamless Access:</span>Your
-          Gate Pass Awaits <br />
-          <span style="color: rgb(238, 178, 123)">Log In Now.</span>
-        </p>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gate Pass</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/style.css" />
+
+</head>
+
+<body>
+  <div class="Full-Login-page">
+    <div class="page-details">
+      <p class="page-details-para-text">
+        <span style="color: rgb(129, 162, 239)">Seamless Access:</span>Your
+        Gate Pass Awaits <br />
+        <span style="color: rgb(238, 178, 123)">Log In Now.</span>
+      </p>
+    </div>
+    <div class="Allstaffloginpage">
+      <div class="Student-login">
+        <div class="student-image">
+          <i class="fa-solid fa-user" style="font-size: 90px; display: flex; justify-content: center"></i>
+          <p class="title">Student Login</p>
+        </div>
+        <div class="btn-center">
+          <div class="btn">
+            <a class="bttn" href="http://localhost:8081/studentsignin">Login Now</a>
+          </div>
+        </div>
       </div>
-      <div class="Allstaffloginpage">
-        <div class="Student-login">
-          <div class="student-image">
-            <i
-              class="fa-solid fa-user"
-              style="font-size: 90px; display: flex; justify-content: center"
-            ></i>
-            <p class="title">Student Login</p>
-          </div>
-          <div class="btn-center">
-            <div class="btn">
-              <a class="bttn" href="http://localhost:8080/studentsignin">Login Now</a>
-            </div>
+      <div class="admin-login">
+        <div class="admin-image">
+          <i class="fa-solid fa-user-tie" style="font-size: 90px; display: flex; justify-content: center"></i>
+          <p class="title">admin Login</p>
+        </div>
+        <div class="btn-center">
+          <div class="btn">
+            <a class="bttn" href="http://localhost:8081/adminsignin">Login Now</a>
           </div>
         </div>
-        <div class="admin-login">
-          <div class="admin-image">
-            <i
-              class="fa-solid fa-user-tie"
-              style="font-size: 90px; display: flex; justify-content: center"
-            ></i>
-            <p class="title">admin Login</p>
-          </div>
-          <div class="btn-center">
-            <div class="btn">
-              <a class="bttn" href="http://localhost:8080/adminsignin">Login Now</a>
-            </div>
-          </div>
+      </div>
+      <div class="guard-login">
+        <div class="guar-login">
+          <i class="fa-solid fa-users-rays" style="font-size: 90px; display: flex; justify-content: center"></i>
+          <p class="title">Guard Login</p>
         </div>
-        <div class="guard-login">
-          <div class="guar-login">
-            <i
-              class="fa-solid fa-users-rays"
-              style="font-size: 90px; display: flex; justify-content: center"
-            ></i>
-            <p class="title">Guard Login</p>
-          </div>
-          <div class="btn-center">
-            <div class="btn">
-              <a class="bttn" href="http://localhost:8080/guardsignin">Login Now</a>
-            </div>
+        <div class="btn-center">
+          <div class="btn">
+            <a class="bttn" href="http://localhost:8081/guardsignin">Login Now</a>
           </div>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

@@ -15,17 +15,18 @@
 
                 <p class="login-title">Guard Login</p>
 
-                <label class="login-label">Email</label>
-                <input type="email" id="email" class="login-field" placeholder="Enter your email">
+                <form action="/guardsignin" method="POST">
+                    <label class="login-label">Email</label>
+                    <input type="email" name="email" class="login-field" placeholder="Enter your email" required>
 
-                <label class="login-label">Password</label>
-                <input type="password" id="password" class="login-field" placeholder="Enter your password">
+                    <label class="login-label">Password</label>
+                    <input type="password" name="password" class="login-field" placeholder="Enter your password"
+                        required>
 
-                <div class="login-btn-container">
-                    <button class="login-btn">
-                        <a href="http://localhost:8080/guardhome">Login</a>
-                    </button>
-                </div>
+                    <div class="login-btn-container">
+                        <button type="submit" class="login-btn">Login</button>
+                    </div>
+                </form>
 
             </div>
         </div>

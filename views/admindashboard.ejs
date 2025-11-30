@@ -1,77 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Dashboard</title>
 
-    <!-- Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
 
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="/warderndashboard.css" />
-    <link rel="stylesheet" href="/style.css" />
-  </head>
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
-  <body>
-    <div class="main">
-      <div class="full-home-page">
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="/warderndashboard.css" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
 
-        <!-- SIDEBAR -->
-        <div class="sidebar">
-          <input type="checkbox" id="check" />
+<body>
+  <div class="main">
+    <div class="full-home-page">
 
-          <div class="btn_one">
-            <label for="check"><i class="fa-solid fa-bars"></i></label>
-          </div>
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+        <input type="checkbox" id="check" />
 
-          <div class="sidebar_menu">
-
-            <div class="logo">
-              <a href="#">GatePass</a>
-            </div>
-
-            <div class="btn_two">
-              <label for="check"><i class="fa-solid fa-xmark"></i></label>
-            </div>
-
-            <div class="menu">
-
-              <div class="hover">
-                <i class="fa-solid fa-house"></i>
-                <a class="res" href="/adminhome">Home</a>
-              </div>
-
-              <div class="hover">
-                <i class="fa-solid fa-right-from-bracket"></i>
-                <a class="res" href="/">Log Out</a>
-              </div>
-
-            </div>
-          </div>
+        <div class="btn_one">
+          <label for="check"><i class="fa-solid fa-bars"></i></label>
         </div>
 
-        <!-- MAIN CONTENT -->
-        <div class="full-conatiner">
+        <div class="sidebar_menu">
 
-          <% studat.forEach(studata => { %>
+          <div class="logo">
+            <a href="#">GatePass</a>
+          </div>
+
+          <div class="btn_two">
+            <label for="check"><i class="fa-solid fa-xmark"></i></label>
+          </div>
+
+          <div class="menu">
+
+            <div class="hover">
+              <i class="fa-solid fa-house"></i>
+              <a class="res" href="/adminhome">Home</a>
+            </div>
+
+            <div class="hover">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              <a class="res" href="/">Log Out</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN CONTENT -->
+      <div class="full-conatiner">
+        <% studat.forEach(studata=> { %>
 
           <!-- Single Card -->
           <div class="information-deshboard">
 
             <!-- ID + DATE -->
             <div class="id-date">
-              <div class="id"><p><%= studata._id %></p></div>
+              <div class="id">
+                <p>
+                  <%= studata._id %>
+                </p>
+              </div>
 
               <div class="date">
                 <p>
-                  <%= new Date(studata.time).toLocaleString("en-US", {
-                        dateStyle: "medium",
-                        timeStyle: "short",
-                  }) %>
+                  <%= new Date(studata.time).toLocaleString("en-US", { dateStyle: "medium" , timeStyle: "short" , }) %>
                 </p>
               </div>
             </div>
@@ -81,17 +79,31 @@
 
               <div class="name">
                 <p>Name:</p>
-                <p><%= studata.fName %> <%= studata.mName %> <%= studata.lName %></p>
+                <p>
+                  <%= studata.fName %>
+                    <%= studata.lName %>
+                </p>
               </div>
 
-              <div class="mode">
-                <p>Pass Mode:</p>
-                <p><%= studata.mode %></p>
+              <div class="usn" style="width: 20%; padding: 10px 10px;">
+                <p>USN:</p>
+                <p>
+                  <%=studata.usn%>
+                </p>
+              </div>
+
+              <div class="sem-sec" style="width: 20%; padding: 10px 10px;">
+                <p>Class:</p>
+                <p>
+                  Sem : <%= studata.sem %> and Sec : <%= studata.section %>
+                </p>
               </div>
 
               <div class="pov">
                 <p>Visited:</p>
-                <p><%= studata.pOV %></p>
+                <p>
+                  <%= studata.pOV %>
+                </p>
               </div>
             </div>
 
@@ -101,37 +113,33 @@
               <!-- APPROVAL BOX -->
               <div class="approval-box">
 
-                <% if (studata.Status === "pending") { %>
+                <% if (studata.Status==="pending" ) { %>
 
-                <form action="/ward" method="POST">
-                  <input type="hidden" name="id" value="<%= studata._id %>" />
+                  <form action="/ward" method="POST">
+                    <input type="hidden" name="id" value="<%= studata._id %>" />
 
-                  <select class="approval-select" name="decision" required>
-                    <option value="">Admin Approval</option>
-                    <option value="Approve">Approve</option>
-                    <option value="Reject">Reject</option>
-                  </select>
+                    <select class="approval-select" name="decision" required>
+                      <option value="">Admin Approval</option>
+                      <option value="Approved">Approved</option>
+                      <option value="Rejected">Rejected</option>
+                    </select>
 
-                  <button class="approval-submit" type="submit">Submit</button>
-                </form>
+                    <button class="approval-submit" type="submit">Submit</button>
+                  </form>
 
-<% } else { %>
+                  <% } else { %>
 
-<p class="<%= studata.Status === 'Approve' ? 'status-approved' : 'status-rejected' %>">
-  Status: <%= studata.Status %>
-</p>
+                    <p class="<%= studata.Status === 'Approved' ? 'status-approved' : 'status-rejected' %>">
+                      Status: <%= studata.Status %>
+                    </p>
 
-<% } %>
+                    <% } %>
 
 
               </div>
 
               <!-- DELETE BUTTON -->
-              <form
-                action="/admin/delete"
-                method="POST"
-                onsubmit="return confirm('Delete this record permanently?')"
-              >
+              <form action="/admin/delete" method="POST" onsubmit="return confirm('Delete this record permanently?')">
                 <input type="hidden" name="id" value="<%= studata._id %>" />
                 <button class="delete-btn">Delete</button>
               </form>
@@ -141,8 +149,9 @@
 
           <% }) %>
 
-        </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

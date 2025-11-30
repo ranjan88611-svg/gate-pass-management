@@ -1,142 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Student Register</title>
   <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/formcss.css" />
   <style>
-    /* Card styling (same look as login) */
+    .register-wrapper {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: none !important;
+    }
+
     .register-card {
-      width: 430px;
+      width: 65%;
+      max-width: 850px;
       background: white;
-      padding: 30px 40px;
-      border-radius: 14px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      padding: 35px 45px;
+      border-radius: 16px;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
       font-family: "Nunito Sans", sans-serif;
-      margin: auto;
     }
 
-    .register-title {
-      font-size: 32px;
-      font-weight: 800;
+    .register-card h2 {
       text-align: center;
-      margin-bottom: 20px;
+      font-weight: 800;
+      margin-bottom: 25px;
     }
 
-    .input-group { margin-bottom: 15px; }
-    .input-group label { font-size: 16px; font-weight: 600; display:block; }
-    .input-group input {
+    .row2 {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 18px;
+    }
+
+    .row2 div {
+      width: 100%;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    input,
+    select {
       width: 100%;
       padding: 12px;
       margin-top: 6px;
-      font-size: 16px;
-      border: 1px solid #9DB7F0;
       border-radius: 6px;
+      border: 1px solid #9DB7F0;
+      font-size: 15px;
+      box-sizing: border-box;
     }
-    .input-group input:focus { outline: none; box-shadow: 0 0 4px #0074e4; }
 
-    .register-btn {
+    .submit-btn {
       width: 100%;
       padding: 12px;
       background: #0074e4;
       color: white;
-      font-size: 18px;
-      font-weight: 700;
       border: none;
       border-radius: 6px;
+      font-size: 18px;
+      font-weight: 600;
       cursor: pointer;
       margin-top: 10px;
     }
-    .register-btn:hover { background: #005fcc; }
 
-    .login-link { text-align: center; margin-top: 14px; font-size: 17px; }
-    .login-link a { color: #0074e4; font-weight:700; text-decoration:none; }
-
-    /* make sure the wrapper centers the card and keeps login background */
-    .Full-sign-page {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      width: 100%;
-      /* background-image is already defined in style.css for .Full-sign-page */
+    .submit-btn:hover {
+      background: #005fcc;
     }
 
-    @media (max-width: 480px) {
-      .register-card { width: 92%; padding: 20px; }
+    @media (max-width: 768px) {
+      .row2 {
+        flex-direction: column;
+      }
+
+      .register-card {
+        width: 90%;
+        padding: 25px;
+      }
     }
   </style>
 </head>
+
 <body>
+  <div class="full-home-page">
+    <div class="register-wrapper">
+      <div class="register-card">
+        <h2>Student Registration</h2>
 
-  <!-- Reuse the same class used by your login page so background is identical -->
-  <div class="Full-sign-page">
-    <form action="/student/register" method="POST" class="register-card">
-      <div class="register-title">Student Register</div>
+        <form action="/student/register" method="POST">
 
-      <div class="input-group">
-        <label>Full Name</label>
-        <input type="text" name="name" required />
+          <!-- Name -->
+          <div class="row2">
+            <div>
+              <label>Full Name</label>
+              <input type="text" name="name" required>
+            </div>
+          </div>
+
+          <!-- USN and Email -->
+          <div class="row2">
+            <div>
+              <label>USN</label>
+              <input type="text" name="usn" required>
+            </div>
+            <div>
+              <label>Email</label>
+              <input type="email" name="email" required>
+            </div>
+          </div>
+
+          <!-- Phone -->
+          <div class="row2">
+            <div>
+              <label>Phone</label>
+              <input type="tel" name="phone" required>
+            </div>
+          </div>
+
+          <!-- Password and Confirm Password -->
+          <div class="row2">
+            <div>
+              <label>Password</label>
+              <input type="password" name="password" required>
+            </div>
+            <div>
+              <label>Confirm Password</label>
+              <input type="password" name="confirmPassword" required>
+            </div>
+          </div>
+
+          <!-- Semester and Section -->
+          <div class="row2">
+            <div>
+              <label>Semester</label>
+              <select name="sem" required>
+                <option value="">Select Semester</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+              </select>
+            </div>
+            <div>
+              <label>Section</label>
+              <select name="section" required>
+                <option value="">Select Section</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="submit-btn" type="submit">Register</button>
+        </form>
       </div>
-
-      <div class="input-group">
-        <label>USN</label>
-        <input type="text" name="usn" required />
-      </div>
-
-      <div class="input-group">
-        <label>Email</label>
-        <input type="email" name="email" required />
-      </div>
-
-      <div class="input-group">
-        <label>Phone</label>
-        <input type="text" name="phone" required />
-      </div>
-
-      <div class="input-group">
-        <label>Password</label>
-        <input type="password" name="password" required />
-      </div>
-
-      <div class="input-group">
-        <label>Confirm Password</label>
-        <input type="password" name="confirmPassword" required />
-      </div>
-
-      <button class="register-btn" type="submit">Register</button>
-
-      <div class="login-link">
-        Already have an account? <a href="/studentsignin">Login</a>
-      </div>
-    </form>
+    </div>
   </div>
-<div class="form-group">
-    <label>Semester</label>
-    <select name="sem" class="login-field" required>
-        <option value="">Select Semester</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-    </select>
-</div>
-
-<div class="form-group">
-    <label>Section</label>
-    <select name="section" class="login-field" required>
-        <option value="">Select Section</option>
-        <option value="A">A</option>
-        <option value="B">B</option>
-        <option value="C">C</option>
-        <option value="D">D</option>
-    </select>
-</div>
-
 </body>
+
 </html>

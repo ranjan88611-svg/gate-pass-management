@@ -1,61 +1,20 @@
 const mongoose = require('mongoose');
 
 const studentSchema = new mongoose.Schema({
-    fName : {
-        type : String,
-        maxLength : 50,
-        required : true,
-    },
-    mName : {
-        type : String,
-        maxLength : 50
-    },
-    lName : {
-        type : String,
-        maxLength : 50,
-        required : true,
-    },
+  fName: { type: String, maxLength: 50, required: true },
+  lName: { type: String, maxLength: 50, required: true },
 
-    // Gate Pass Name REMOVED => make fully optional with no enum restriction
-    hName: {
-        type: String,
-        required : false,
-        default: null
-    },
+  hName: { type: String, required: false, default: null },
+  rNO: { type: Number, required: false, default: null },
 
-    // Room No REMOVED => make optional
-    rNO : {
-        type : Number,
-        required : false,
-        default: null
-    },
+  pOV: { type: String, maxLength: 50, required: true },
+  time: { type: Date, required: true },
 
-    mode: {
-        type: String,
-        enum: ['Day', 'Night'],
-        required: true,
-    },
+  Status: { type: String, default: 'pending' },
 
-    pOV : {
-        type : String,
-        maxLength : 50,
-        required : true,
-    },
-
-    time: {
-        type: Date,
-        required: true,
-    },
-
-    Status: {
-        type: String,
-        default: "pending"
-    },
-
-    sem: { type: String, required: true },
-    section: { type: String, required: true },
-
-
+  sem: { type: String, required: true },
+  section: { type: String, required: true },
+  usn: { type: String, required: true },
 });
 
 const studentData = mongoose.model("studentData", studentSchema);
